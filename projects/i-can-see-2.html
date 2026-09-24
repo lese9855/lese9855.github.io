@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A photo reader for blind and low-vision people. It turns photographs into detailed audio descriptions and concise Braille summaries, offering different ways to experience the same image.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#005ea5">
+  <title>I Can See 2 | Seunghwan Lee</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0c'/%3E%3Cpath d='M10 6v19h14v-5h-9V6z' fill='white'/%3E%3Cpath d='M0 29h32v3H0z' fill='%231d70b8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../video-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="../index.html#about">Seunghwan Lee</a>
+      <nav aria-label="Main navigation"><ul class="navigation"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#work">Works</a></li><li><a href="../index.html#patents">Patents</a></li><li><a href="../index.html#cv">CV</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+
+    <div id="top"></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="../index.html">Home</a></li><li><a href="../index.html#work">Selected works</a></li><li aria-current="page">I Can See 2</li></ol>
+    </nav>
+    <header class="detail-header">
+      <p class="eyebrow">2025–2026 / Accessibility / Multisensory Interaction</p>
+      <h1>I Can See 2</h1>
+      <p class="detail-lead">A photo reader for blind and low-vision people. It turns photographs into detailed audio descriptions and concise Braille summaries, offering different ways to experience the same image.</p>
+      
+    </header>
+    <div class="detail-layout">
+      <aside class="contents">
+        <nav aria-label="On this page"><h2>On this page</h2><ul><li><a href="#motivation">Making photographs accessible</a></li><li><a href="#interaction">How it works</a></li><li><a href="#design">Different senses, different amounts of detail</a></li><li><a href="#feedback">Prototypes and feedback</a></li><li><a href="#implementation">Implementation and contribution</a></li></ul></nav>
+      </aside>
+      <div class="detail-body">
+        <section id="motivation" class="detail-section" aria-labelledby="motivation-heading"><h2 id="motivation-heading">Making photographs accessible</h2><figure class="video" data-poster="../assets/i-can-see-2.webp">
+      <div class="video-frame">
+        <iframe width="960" height="540"
+          src="https://www.youtube-nocookie.com/embed/RqO9xXv41kE?playsinline=1&amp;rel=0"
+          title="I Can See 2 — Second prototype: audio and Braille output." loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Second prototype: audio and Braille output. <a href="https://youtube.com/shorts/RqO9xXv41kE">Watch on YouTube</a></figcaption>
+    </figure>
+                <p>I began with a question: how can a photograph be experienced through senses other than sight? Visual media changes constantly, while printed Braille materials carry fixed information. I wanted to build a system that could respond to an image brought by the person using it.</p>
+                <p>The prototype reads a photograph displayed on a smartphone. AI-generated descriptions become two complementary outputs: spoken descriptions that convey more detail, and short summaries printed in Korean Braille.</p>
+                <figure class="detail-figure"><img src="../assets/i-can-see-2.webp" width="1440" height="1080" fetchpriority="high" alt="A camera and smartphone capture setup beside a blue Braille printer on a desk."><figcaption>The second prototype, with audio and physical Braille output.</figcaption></figure>
+            </section><section id="interaction" class="detail-section" aria-labelledby="interaction-heading"><h2 id="interaction-heading">How it works</h2>
+                <ol class="steps">
+                  <li><h3>Place a photograph under the camera</h3><p>A smartphone displaying an image is placed in the capture area. The system waits for it to remain still, then detects the screen and extracts the image region.</p></li>
+                  <li><h3>Describe the image</h3><p>The image is sent to an AI model, which generates a detailed description and a shorter summary intended for Braille reading.</p></li>
+                  <li><h3>Convert the descriptions</h3><p>The detailed text is converted to speech. The summary is processed by a custom Korean Braille converter based on the 2024 Revised Korean Braille Regulations.</p></li>
+                  <li><h3>Listen and read by touch</h3><p>The system plays the audio description and sends the Braille data to a BL-1000 printer, producing a physical output.</p></li>
+                </ol>
+            </section><section id="design" class="detail-section" aria-labelledby="design-heading"><h2 id="design-heading">Different senses, different amounts of detail</h2>
+                <p>Speech and Braille offer different ways of encountering information. Audio can describe the scene and the relative positions of objects in greater detail. Printed Braille needs a more concise structure because the length of the output affects how it is read.</p>
+                <p>This led me to separate the information into two layers. Language connects the photograph to the auditory and tactile outputs, while the amount of detail is adapted to each medium.</p>
+            </section><section id="feedback" class="detail-section" aria-labelledby="feedback-heading"><h2 id="feedback-heading">Prototypes and feedback</h2><figure class="video" data-poster="../assets/i-can-see-2-v1.webp">
+      <div class="video-frame">
+        <iframe width="960" height="540"
+          src="https://www.youtube-nocookie.com/embed/UA_z8u3Ll_Q?playsinline=1&amp;rel=0"
+          title="I Can See 2 — first prototype demonstration" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>First prototype: image capture and Braille output. <a href="https://youtu.be/UA_z8u3Ll_Q">Watch on YouTube</a></figcaption>
+    </figure>
+                <p>The first prototype connected image interpretation to Korean Braille conversion and printing. The second added complementary audio descriptions. Early feedback from staff at Chung-Ang University’s Disability Student Support Center informed the hardware prototype.</p>
+                <figure class="detail-figure"><img src="../assets/i-can-see-2-v1.webp" width="1440" height="1081" loading="lazy" decoding="async" alt="The first prototype with a Raspberry Pi, smartphone, camera, and blue Braille printer."><figcaption>The first prototype connected image capture to Braille output.</figcaption></figure>
+                <p>I also demonstrated the prototype to staff at the Siloam Center for the Blind. Their feedback emphasized concise Braille output and richer spatial information in the audio descriptions, including where objects are located in the photograph.</p>
+                <p>These were preliminary staff demonstrations. Evaluation with blind and low-vision participants remains a next step.</p>
+            </section><section id="implementation" class="detail-section" aria-labelledby="implementation-heading"><h2 id="implementation-heading">Implementation and contribution</h2>
+                <p>This is an individual project. I worked on the concept, hardware setup, image capture, AI integration, Korean Braille conversion, printing, speech output, and prototype documentation.</p>
+                <dl class="facts">
+                  <div><dt>Computing and capture</dt><dd>Raspberry Pi 4B, Pi HQ Camera, Python, OpenCV</dd></div>
+                  <div><dt>AI and audio</dt><dd>OpenAI image interpretation and text-to-speech</dd></div>
+                  <div><dt>Tactile output</dt><dd>Custom Korean Braille conversion and BL-1000 Braille Printer</dd></div>
+                </dl>
+            </section>
+        <nav class="return-link" aria-label="Return to overview"><a href="../index.html#work">Back to selected works</a></nav>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Seunghwan Lee</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

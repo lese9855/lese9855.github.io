@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A visualization of Seoul’s traffic flow through the metaphor of cellular metabolism. Changing forms and colors reveal the city as a living organism.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#005ea5">
+  <title>City of Organism | Seunghwan Lee</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0c'/%3E%3Cpath d='M10 6v19h14v-5h-9V6z' fill='white'/%3E%3Cpath d='M0 29h32v3H0z' fill='%231d70b8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../video-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="../index.html#about">Seunghwan Lee</a>
+      <nav aria-label="Main navigation"><ul class="navigation"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#work">Works</a></li><li><a href="../index.html#patents">Patents</a></li><li><a href="../index.html#cv">CV</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+
+    <div id="top"></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="../index.html">Home</a></li><li><a href="../index.html#work">Selected works</a></li><li aria-current="page">City of Organism</li></ol>
+    </nav>
+    <header class="detail-header">
+      <p class="eyebrow">2024 / Data Visualization / New Media</p>
+      <h1>City of Organism</h1>
+      <p class="detail-lead">A visualization of Seoul’s traffic flow through the metaphor of cellular metabolism. Changing forms and colors reveal the city as a living organism.</p>
+      
+    </header>
+    <div class="detail-layout">
+      <aside class="contents">
+        <nav aria-label="On this page"><h2>On this page</h2><ul><li><a href="#concept">Seeing the city as an organism</a></li><li><a href="#data">From public data to a spatial structure</a></li><li><a href="#visual-approach">A biological metaphor for urban flow</a></li><li><a href="#implementation">Implementation and contribution</a></li></ul></nav>
+      </aside>
+      <div class="detail-body">
+        <section id="concept" class="detail-section" aria-labelledby="concept-heading"><h2 id="concept-heading">Seeing the city as an organism</h2><figure class="video" data-poster="../assets/city-of-organism.webp">
+      <div class="video-frame">
+        <iframe width="960" height="540"
+          src="https://www.youtube-nocookie.com/embed/7Uyt15TXl0M?playsinline=1&amp;rel=0"
+          title="City of Organism — Seoul’s traffic flow visualized as a living organism." loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Seoul’s traffic flow visualized as a living organism. <a href="https://youtu.be/7Uyt15TXl0M">Watch on YouTube</a></figcaption>
+    </figure>
+                <p>I was interested in the resemblance between movement across a city and the exchange of materials within cells. Both can be understood through flows, connections, and changes over time.</p>
+                <p>City of Organism uses this biological metaphor to give Seoul’s traffic data a spatial form. The road network becomes a moving structure in which changes in traffic appear through the shape and color of three-dimensional elements.</p>
+                <figure class="detail-figure"><img src="../assets/city-of-organism.webp" width="1200" height="678" fetchpriority="high" alt="Seoul’s road network visualized as moving blue, pink, and green three-dimensional forms against a black background."><figcaption>Traffic data becomes the shape and movement of an urban organism.</figcaption></figure>
+            </section><section id="data" class="detail-section" aria-labelledby="data-heading"><h2 id="data-heading">From public data to a spatial structure</h2>
+                <ol class="steps">
+                  <li><h3>Connect the datasets</h3><p>I joined October 2024 traffic-speed data from TOPIS with Seoul’s standard road-link data, using road-link IDs to match the records.</p></li>
+                  <li><h3>Locate each road segment</h3><p>The matched data provides start and end coordinates, direction, lane count, and hourly traffic-speed values for the road segments.</p></li>
+                  <li><h3>Prepare the time series</h3><p>I reorganized the month’s hourly values into a coordinate-based TSV dataset and imported it into TouchDesigner.</p></li>
+                  <li><h3>Map data to form</h3><p>Lane count controls the width of each triangular prism. Traffic speed controls the base-triangle height, prism height, and color. The elements move between the road segment coordinates.</p></li>
+                </ol>
+            </section><section id="visual-approach" class="detail-section" aria-labelledby="visual-approach-heading"><h2 id="visual-approach-heading">A biological metaphor for urban flow</h2>
+                <p>The visual approach is guided by cellular metabolism: the city is encountered as a changing, connected body. The full October sequence plays as a loop, allowing the structure to evolve over time.</p>
+                <p>Form and color carry the traffic-speed values. This makes the data visible as changes in the overall structure and visual intensity, while preserving a coherent spatial flow.</p>
+                <figure class="detail-figure"><img src="../assets/city-network.webp" width="1440" height="1165" loading="lazy" decoding="async" alt="A TouchDesigner network connecting traffic data to a three-dimensional visualization."><figcaption>The TouchDesigner network used to build the traffic visualization.</figcaption></figure>
+            </section><section id="implementation" class="detail-section" aria-labelledby="implementation-heading"><h2 id="implementation-heading">Implementation and contribution</h2>
+                <p>This was an individual project. I handled the public-data preprocessing, road-link and coordinate mapping, TouchDesigner network, parameter mapping, visual concept, and documentation.</p>
+                <dl class="facts">
+                  <div><dt>Data processing</dt><dd>Python, road-link matching, coordinate mapping, and TSV preparation</dd></div>
+                  <div><dt>Visualization</dt><dd>TouchDesigner</dd></div>
+                  <div><dt>Source material</dt><dd>Seoul traffic-speed and road-link datasets, October 2024</dd></div>
+                </dl>
+            </section>
+        <nav class="return-link" aria-label="Return to overview"><a href="../index.html#work">Back to selected works</a></nav>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Seunghwan Lee</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

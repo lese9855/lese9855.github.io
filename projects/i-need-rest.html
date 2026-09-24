@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A gamification project where people compete over how long they can put their phones to sleep. A small phone bed, a rest timer, and a shared leaderboard turn putting a phone down into a playful invitation to take a break.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#005ea5">
+  <title>I Need Rest | Seunghwan Lee</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0c'/%3E%3Cpath d='M10 6v19h14v-5h-9V6z' fill='white'/%3E%3Cpath d='M0 29h32v3H0z' fill='%231d70b8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../video-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="../index.html#about">Seunghwan Lee</a>
+      <nav aria-label="Main navigation"><ul class="navigation"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#work">Works</a></li><li><a href="../index.html#patents">Patents</a></li><li><a href="../index.html#cv">CV</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+
+    <div id="top"></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="../index.html">Home</a></li><li><a href="../index.html#work">Selected works</a></li><li aria-current="page">I Need Rest</li></ol>
+    </nav>
+    <header class="detail-header">
+      <p class="eyebrow">2025 / Gamification / Digital Wellbeing</p>
+      <h1>I Need Rest</h1>
+      <p class="detail-lead">A gamification project where people compete over how long they can put their phones to sleep. A small phone bed, a rest timer, and a shared leaderboard turn putting a phone down into a playful invitation to take a break.</p>
+      
+    </header>
+    <div class="detail-layout">
+      <aside class="contents">
+        <nav aria-label="On this page"><h2>On this page</h2><ul><li><a href="#setting">An invitation to put the phone down</a></li><li><a href="#interaction">How a rest session works</a></li><li><a href="#design">Making a small action playful</a></li><li><a href="#installation">Installation in a shared space</a></li><li><a href="#implementation">Implementation and contribution</a></li></ul></nav>
+      </aside>
+      <div class="detail-body">
+        <section id="setting" class="detail-section" aria-labelledby="setting-heading"><h2 id="setting-heading">An invitation to put the phone down</h2><figure class="video" data-poster="../assets/i-need-rest.webp">
+      <div class="video-frame">
+        <iframe width="960" height="540"
+          src="https://www.youtube-nocookie.com/embed/LiPgG6g4JF8?playsinline=1&amp;rel=0"
+          title="I Need Rest — Putting a phone to sleep and recording a rest session." loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Putting a phone to sleep and recording a rest session. <a href="https://youtu.be/LiPgG6g4JF8">Watch on YouTube</a></figcaption>
+    </figure>
+                <p>The project began with a shared table intended for conversation and reading. Smartphone use had become a frequent part of that space, and I wanted to encourage people to choose a break from their devices.</p>
+                <p>I gave the phone a place to sleep: a small, 3D-printed bed. Participants can put their phones to rest, record the time, and compare it with others through a shared leaderboard.</p>
+                <figure class="detail-figure"><img src="../assets/i-need-rest.webp" width="1440" height="1080" fetchpriority="high" alt="A smartphone resting on a small red bed on a shared table, next to instructions for participation."><figcaption>A small bed gives the act of putting a phone down a physical form.</figcaption></figure>
+            </section><section id="interaction" class="detail-section" aria-labelledby="interaction-heading"><h2 id="interaction-heading">How a rest session works</h2>
+                <ol class="steps">
+                  <li><h3>Wake up the web app</h3><p>An NFC tag on the phone bed opens the mobile web app. The participant enters a name and the activity they plan to do while taking a break.</p></li>
+                  <li><h3>Put the phone to sleep</h3><p>After sensor permission is granted, the timer starts and the phone’s initial orientation is recorded as a baseline.</p></li>
+                  <li><h3>Leave it resting</h3><p>The app watches changes in the phone’s tilt. A change of more than one degree on either monitored axis ends the session.</p></li>
+                  <li><h3>Share the time</h3><p>The duration, name, and intended activity are saved to Firebase. The Hall of Rest leaderboard displays records ordered by rest duration.</p></li>
+                </ol>
+            </section><section id="design" class="detail-section" aria-labelledby="design-heading"><h2 id="design-heading">Making a small action playful</h2>
+                <p>The bed makes the idea of a sleeping phone easy to recognize. Recording and sharing the time gives participants a reason to try the activity and return to it. Competition becomes part of the invitation to put the phone down.</p>
+                <p>The phone supplies its own motion sensing, so the physical object can remain simple. NFC connects the bed to the web app, and the shared display makes individual participation visible in the space.</p>
+            </section><section id="installation" class="detail-section" aria-labelledby="installation-heading"><h2 id="installation-heading">Installation in a shared space</h2>
+                <figure class="detail-figure"><img src="../assets/rest-installation.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Phone beds on a shared reading table, with a large leaderboard screen nearby."><figcaption>The installation brings the phone beds and shared feedback into one space.</figcaption></figure>
+                <p>I installed and operated the system in a real shared space, combining phone beds on the table with a public leaderboard. This brought the object, the web interaction, and feedback from other participants into the same setting.</p>
+                <p>The records indicate participation in the phone-down activity. Understanding the quality of the break and whether the experience changes everyday phone use would require further evaluation.</p>
+            </section><section id="implementation" class="detail-section" aria-labelledby="implementation-heading"><h2 id="implementation-heading">Implementation and contribution</h2>
+                <p>This was an individual project. I designed the interaction, fabricated the phone beds, developed the web app and database connection, integrated the leaderboard, and managed installation and operation.</p>
+                <dl class="facts">
+                  <div><dt>Web application</dt><dd>JavaScript and smartphone orientation sensing</dd></div>
+                  <div><dt>Records and feedback</dt><dd>Firebase Realtime Database and a shared leaderboard</dd></div>
+                  <div><dt>Physical interaction</dt><dd>NFC tags, SketchUp, and 3D-printed phone beds</dd></div>
+                </dl>
+            </section>
+        <nav class="return-link" aria-label="Return to overview"><a href="../index.html#work">Back to selected works</a></nav>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Seunghwan Lee</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

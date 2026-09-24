@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="An interactive book that reads its reader. Turning the pages answers reflective questions, and AI responds to the choices made along the way.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#005ea5">
+  <title>Why do you read me? | Seunghwan Lee</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0c'/%3E%3Cpath d='M10 6v19h14v-5h-9V6z' fill='white'/%3E%3Cpath d='M0 29h32v3H0z' fill='%231d70b8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../video-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="../index.html#about">Seunghwan Lee</a>
+      <nav aria-label="Main navigation"><ul class="navigation"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#work">Works</a></li><li><a href="../index.html#patents">Patents</a></li><li><a href="../index.html#cv">CV</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+
+    <div id="top"></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="../index.html">Home</a></li><li><a href="../index.html#work">Selected works</a></li><li aria-current="page">Why do you read me?</li></ol>
+    </nav>
+    <header class="detail-header">
+      <p class="eyebrow">2025 / Tangible Interaction / Generative AI</p>
+      <h1>Why do you read me?</h1>
+      <p class="detail-lead">An interactive book that reads its reader. Turning the pages answers reflective questions, and AI responds to the choices made along the way.</p>
+      
+    </header>
+    <div class="detail-layout">
+      <aside class="contents">
+        <nav aria-label="On this page"><h2>On this page</h2><ul><li><a href="#concept">A book that reads its reader</a></li><li><a href="#interaction">How the pages become input</a></li><li><a href="#design">Keeping the material experience of a book</a></li><li><a href="#reflection">Questions and reflection</a></li><li><a href="#implementation">Implementation and contribution</a></li></ul></nav>
+      </aside>
+      <div class="detail-body">
+        <section id="concept" class="detail-section" aria-labelledby="concept-heading"><h2 id="concept-heading">A book that reads its reader</h2><figure class="video" data-poster="../assets/why-do-you-read-me.webp">
+      <div class="video-frame">
+        <iframe width="960" height="540"
+          src="https://www.youtube-nocookie.com/embed/DdquZpPIgDg?playsinline=1&amp;rel=0"
+          title="Why do you read me? — Turning the pages and receiving a response." loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Turning the pages and receiving a response. <a href="https://youtu.be/DdquZpPIgDg">Watch on YouTube</a></figcaption>
+    </figure>
+                <p>Reading usually begins with a person interpreting a book. This project turns that relationship around: the reader’s physical choices become something the book can interpret and respond to.</p>
+                <p>The reader answers reflective questions by turning paper pages. The system records these choices and uses a language model to create a short, personalized reflection, which appears on the displays built into the book.</p>
+                <figure class="detail-figure"><img src="../assets/why-do-you-read-me.webp" width="1440" height="1080" fetchpriority="high" alt="A physical book titled Why do you read me? with two small embedded displays and paper pages."><figcaption>A familiar act of reading becomes an exchange with the book.</figcaption></figure>
+            </section><section id="interaction" class="detail-section" aria-labelledby="interaction-heading"><h2 id="interaction-heading">How the pages become input</h2>
+                <ol class="steps">
+                  <li><h3>Turn a paper page</h3><p>Thin neodymium magnets are attached to the pages. Nine Hall sensors in the book-cover base detect the changing magnetic state.</p></li>
+                  <li><h3>Confirm the open page</h3><p>A Raspberry Pi reads the sensors and estimates the page position from the number of detected magnets. The state must remain unchanged for four seconds before a page turn is accepted.</p></li>
+                  <li><h3>Choose through reading</h3><p>The confirmed page position controls language selection, question navigation, and answers. Physical page turns carry the reader’s choices into the system.</p></li>
+                  <li><h3>Receive a response</h3><p>A language model combines the selected answers into a brief reflection and returns it through the embedded displays.</p></li>
+                </ol>
+            </section><section id="design" class="detail-section" aria-labelledby="design-heading"><h2 id="design-heading">Keeping the material experience of a book</h2>
+                <p>The paper book and the sensing base are separate. The base contains the computing hardware, sensors, and displays; the paper pages carry magnets. This arrangement allows a different paper book to be used with the same base.</p>
+                <p>Page turning is central to the experience. It connects AI interaction to a familiar action and makes the sequence of physical choices part of the exchange. The four-second confirmation window helps distinguish an intentional page selection from pages moving during a turn.</p>
+                <figure class="detail-figure"><img src="../assets/read-me-internals.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="The opened book-cover base showing the displays, Raspberry Pi, sensor connections, and wiring."><figcaption>The paper book is separate from the sensing and computing base.</figcaption></figure>
+            </section><section id="reflection" class="detail-section" aria-labelledby="reflection-heading"><h2 id="reflection-heading">Questions and reflection</h2>
+                <p>I refined the questions and result structure with feedback from a psychology major, focusing on clarity and coherence. The output is a prompt for personal reflection.</p>
+                <p>The project explores how an everyday object can support interaction with AI. A possible next step is to compare this page-based interaction with screen input among people with different levels of digital familiarity.</p>
+            </section><section id="implementation" class="detail-section" aria-labelledby="implementation-heading"><h2 id="implementation-heading">Implementation and contribution</h2>
+                <p>I developed the concept and built the system, including the book-cover structure, page sensing, interaction logic, AI integration, and prototype documentation. The question and result content benefited from the psychology feedback described above.</p>
+                <dl class="facts">
+                  <div><dt>Computing and sensing</dt><dd>Raspberry Pi 4B, GPIO input, nine Hall sensors, neodymium magnets</dd></div>
+                  <div><dt>AI response</dt><dd>OpenAI API</dd></div>
+                  <div><dt>Fabrication</dt><dd>SketchUp and 3D printing</dd></div>
+                </dl>
+            </section>
+        <nav class="return-link" aria-label="Return to overview"><a href="../index.html#work">Back to selected works</a></nav>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Seunghwan Lee</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
