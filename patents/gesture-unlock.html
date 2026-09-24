@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A screen-unlocking method that recognizes a sequence of gesture directions, allowing the pattern to be entered at different positions on the screen.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#005ea5">
+  <title>Vector-based Gesture Unlock | Seunghwan Lee</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0c'/%3E%3Cpath d='M10 6v19h14v-5h-9V6z' fill='white'/%3E%3Cpath d='M0 29h32v3H0z' fill='%231d70b8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../video-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="../index.html#about">Seunghwan Lee</a>
+      <nav aria-label="Main navigation"><ul class="navigation"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#work">Works</a></li><li><a href="../index.html#patents">Patents</a></li><li><a href="../index.html#cv">CV</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+
+    <div id="top"></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="../index.html">Home</a></li><li><a href="../index.html#patents">Patent / Utility Models</a></li><li aria-current="page">Vector-based Gesture Unlock</li></ol>
+    </nav>
+    <header class="detail-header">
+      <p class="eyebrow">Patent / 10-1825829</p>
+      <h1>Vector-based Gesture Unlock</h1>
+      <p class="detail-lead">A screen-unlocking method that recognizes a sequence of gesture directions, allowing the pattern to be entered at different positions on the screen.</p>
+      <dl class="registration facts">
+          <div><dt>Type</dt><dd>Patent</dd></div>
+          <div><dt>Registration no.</dt><dd>10-1825829</dd></div>
+          <div><dt>Registered title</dt><dd>Apparatus and Method for Unlocking Screen of Terminal</dd></div>
+          <div><dt>Registration record</dt><dd><a href="https://doi.org/10.8080/1020160107406">View on KIPRIS <span class="link-note">DOI</span></a></dd></div>
+          <div><dt>Project status</dt><dd>Registered concept</dd></div>
+        </dl>
+    </header>
+    <div class="detail-layout">
+      <aside class="contents">
+        <nav aria-label="On this page"><h2>On this page</h2><ul><li><a href="#idea">Recognizing direction across the screen</a></li><li><a href="#mechanism">Proposed recognition process</a></li><li><a href="#development">Development direction</a></li></ul></nav>
+      </aside>
+      <div class="detail-body">
+        <section id="idea" class="detail-section" aria-labelledby="idea-heading"><h2 id="idea-heading">Recognizing direction across the screen</h2>
+                <p>I proposed a screen-unlocking method based on the directions of a gesture. The person draws a sequence of movements, and the system compares their order and relative angles with a stored pattern.</p>
+                <p>Because the pattern is represented by direction vectors, it can be entered at different locations and scales. The concept addresses the need for precise targeting in a fixed point-based pattern, including situations involving one-handed input.</p>
+            </section><section id="mechanism" class="detail-section" aria-labelledby="mechanism-heading"><h2 id="mechanism-heading">Proposed recognition process</h2>
+                <ol class="steps">
+                  <li><h3>Store a direction sequence</h3><p>The unlock pattern is represented as a sequence of reference unit vectors.</p></li>
+                  <li><h3>Read the gesture</h3><p>Touch coordinates are collected as the person drags a finger. Each segment is converted into a normalized direction vector.</p></li>
+                  <li><h3>Combine continuous directions</h3><p>Consecutive drag segments in the same direction are merged, so a brief interruption does not necessarily create another input.</p></li>
+                  <li><h3>Compare the sequence</h3><p>The vectors are compared with the stored pattern using an angular tolerance. A matching order and set of directions produces an unlock decision.</p></li>
+                </ol>
+                <figure class="detail-figure diagram"><a href="../assets/gesture-unlock-diagram.webp" aria-label="Open full-size diagram: Two phone diagrams showing a continuous diagonal drag and shorter collinear segments treated as the same direction."><img src="../assets/gesture-unlock-diagram.webp" width="1078" height="806" loading="lazy" decoding="async" alt="Two phone diagrams showing a continuous diagonal drag and shorter collinear segments treated as the same direction."></a><figcaption>Consecutive segments with the same direction can be treated as one input. <a href="../assets/gesture-unlock-diagram.webp">View full-size diagram</a></figcaption></figure>
+            </section><section id="development" class="detail-section" aria-labelledby="development-heading"><h2 id="development-heading">Development direction</h2>
+                <p>This is a registered unlocking-method concept. It explores how flexible gesture placement could support people who find fixed targets difficult to use.</p>
+                <p>An implemented system would need evaluation of recognition accuracy, error rates, and how well people remember their patterns. The angular tolerance is also a design parameter: allowing greater variation makes input more forgiving, while requiring closer matches makes patterns more specific.</p>
+            </section>
+        <nav class="return-link" aria-label="Return to overview"><a href="../index.html#patents">Back to patent / utility models</a></nav>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Seunghwan Lee</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

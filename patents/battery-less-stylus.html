@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A stylus concept that converts writing pressure into magnetic signals for pressure and tilt input, without an internal battery.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#005ea5">
+  <title>Battery-less Smart Stylus | Seunghwan Lee</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0c'/%3E%3Cpath d='M10 6v19h14v-5h-9V6z' fill='white'/%3E%3Cpath d='M0 29h32v3H0z' fill='%231d70b8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../video-preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="../index.html#about">Seunghwan Lee</a>
+      <nav aria-label="Main navigation"><ul class="navigation"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#work">Works</a></li><li><a href="../index.html#patents">Patents</a></li><li><a href="../index.html#cv">CV</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+
+    <div id="top"></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="../index.html">Home</a></li><li><a href="../index.html#patents">Patent / Utility Models</a></li><li aria-current="page">Battery-less Smart Stylus</li></ol>
+    </nav>
+    <header class="detail-header">
+      <p class="eyebrow">Utility model / 20-0485653</p>
+      <h1>Battery-less Smart Stylus</h1>
+      <p class="detail-lead">A stylus concept that converts writing pressure into magnetic signals for pressure and tilt input, without an internal battery.</p>
+      <dl class="registration facts">
+          <div><dt>Type</dt><dd>Utility model</dd></div>
+          <div><dt>Registration no.</dt><dd>20-0485653</dd></div>
+          <div><dt>Registered title</dt><dd>Stylus Pen</dd></div>
+          <div><dt>Registration record</dt><dd><a href="https://doi.org/10.8080/2020160004465">View on KIPRIS <span class="link-note">DOI</span></a></dd></div>
+          <div><dt>Project status</dt><dd>Registered concept</dd></div>
+        </dl>
+    </header>
+    <div class="detail-layout">
+      <aside class="contents">
+        <nav aria-label="On this page"><h2>On this page</h2><ul><li><a href="#idea">Using the energy of writing</a></li><li><a href="#mechanism">Proposed pressure and tilt sensing</a></li><li><a href="#development">Development direction</a></li></ul></nav>
+      </aside>
+      <div class="detail-body">
+        <section id="idea" class="detail-section" aria-labelledby="idea-heading"><h2 id="idea-heading">Using the energy of writing</h2>
+                <p>I proposed a stylus that uses the force applied while writing to generate a signal. Piezoelectric elements inside the pen convert this force into electricity, which drives a coil to produce a magnetic field.</p>
+                <p>The receiving device would interpret changes in the field to estimate writing pressure and pen tilt. The concept aims to support expressive input while reducing the need for charging and electronics inside the stylus.</p>
+                <figure class="detail-figure diagram"><a href="../assets/stylus-pressure-diagram.webp" aria-label="Open full-size diagram: A stylus cross-section showing its silicone tip, iron core, piezoelectric unit, coil, and the receiving touch panel."><img src="../assets/stylus-pressure-diagram.webp" width="882" height="676" fetchpriority="high" alt="A stylus cross-section showing its silicone tip, iron core, piezoelectric unit, coil, and the receiving touch panel."></a><figcaption>Writing force is proposed as the source of the electrical and magnetic signal. <a href="../assets/stylus-pressure-diagram.webp">View full-size diagram</a></figcaption></figure>
+            </section><section id="mechanism" class="detail-section" aria-labelledby="mechanism-heading"><h2 id="mechanism-heading">Proposed pressure and tilt sensing</h2>
+                <ol class="steps">
+                  <li><h3>Apply pressure through the tip</h3><p>The silicone tip contacts the touch surface. An internal iron core transfers force to the piezoelectric layers.</p></li>
+                  <li><h3>Generate an electrical signal</h3><p>The piezoelectric elements respond to the applied force. Their output passes through the internal coil.</p></li>
+                  <li><h3>Read the magnetic field</h3><p>A magnetic sensor in the receiving device detects the resulting field. Field strength is used as a signal for writing pressure.</p></li>
+                  <li><h3>Estimate tilt</h3><p>The relative position of the magnetic signal and the tip’s touch point is used to estimate the angle of the stylus.</p></li>
+                </ol>
+                <figure class="detail-figure diagram"><a href="../assets/stylus-tilt-diagram.webp" aria-label="Open full-size diagram: A tilted stylus above a touch panel, with the internal coil and piezoelectric unit labeled."><img src="../assets/stylus-tilt-diagram.webp" width="880" height="676" loading="lazy" decoding="async" alt="A tilted stylus above a touch panel, with the internal coil and piezoelectric unit labeled."></a><figcaption>Relative magnetic position is used in the proposed tilt-estimation method. <a href="../assets/stylus-tilt-diagram.webp">View full-size diagram</a></figcaption></figure>
+            </section><section id="development" class="detail-section" aria-labelledby="development-heading"><h2 id="development-heading">Development direction</h2>
+                <p>This is a registered stylus concept. The drawings describe the proposed conversion from physical pressure to electrical and magnetic signals.</p>
+                <p>Further development would need to examine signal strength, sensor placement, and calibration in a physical prototype. One possible calibration method is to press the pen at predefined screen locations and record the magnetic response at each point.</p>
+            </section>
+        <nav class="return-link" aria-label="Return to overview"><a href="../index.html#patents">Back to patent / utility models</a></nav>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Seunghwan Lee</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
